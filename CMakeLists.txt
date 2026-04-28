@@ -31,7 +31,7 @@ install(
 # Install library
 install(
     TARGETS vehicle_bridge
-    EXPORT vehicle_bridgeTargets
+    EXPORT vehicle-bridgeTargets
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
@@ -39,30 +39,30 @@ install(
 
 # Install CMake targets
 install(
-    EXPORT vehicle_bridgeTargets
-    FILE vehicle_bridgeTargets.cmake
+    EXPORT vehicle-bridgeTargets
+    FILE vehicle-bridgeTargets.cmake
     NAMESPACE vehicle_bridge::
-    DESTINATION lib/cmake/vehicle_bridge
+    DESTINATION lib/cmake/vehicle-bridge
 )
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/vehicle_bridgeConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/vehicle-bridgeConfigVersion.cmake"
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY AnyNewerVersion
 )
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/vehicle_bridgeConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/vehicle_bridgeConfig.cmake"
-    INSTALL_DESTINATION lib/cmake/vehicle_bridge
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/vehicle-bridgeConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/vehicle-bridgeConfig.cmake"
+    INSTALL_DESTINATION lib/cmake/vehicle-bridge
 )
 
 install(
     FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/vehicle_bridgeConfig.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/vehicle_bridgeConfigVersion.cmake"
-    DESTINATION lib/cmake/vehicle_bridge
+        "${CMAKE_CURRENT_BINARY_DIR}/vehicle-bridgeConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/vehicle-bridgeConfigVersion.cmake"
+    DESTINATION lib/cmake/vehicle-bridge
 )
 
 # Tests

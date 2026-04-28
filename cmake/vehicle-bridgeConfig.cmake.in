@@ -3,7 +3,7 @@
 include(CMakeFindDependencyMacro)
 find_dependency(common-utils REQUIRED)
 
-include("${CMAKE_CURRENT_LIST_DIR}/vehicle_bridgeTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/vehicle-bridgeTargets.cmake")
 
 # Provide alias vehicle-bridge::vehicle-bridge (hyphen) -> vehicle_bridge::vehicle_bridge (underscore)
 if(NOT TARGET vehicle-bridge::vehicle-bridge)
