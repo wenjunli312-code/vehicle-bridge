@@ -1,9 +1,11 @@
-add_executable(test_vehicle_bridge
-    test_can_message.cpp
-    test_vehicle_controller.cpp
-    test_vehicle_state.cpp
-)
+add_executable(test_can_message test_can_message.cpp)
+target_link_libraries(test_can_message PRIVATE vehicle_bridge)
+add_test(NAME test_can_message COMMAND test_can_message)
 
-target_link_libraries(test_vehicle_bridge PRIVATE vehicle_bridge)
+add_executable(test_vehicle_controller test_vehicle_controller.cpp)
+target_link_libraries(test_vehicle_controller PRIVATE vehicle_bridge)
+add_test(NAME test_vehicle_controller COMMAND test_vehicle_controller)
 
-add_test(NAME vehicle_bridge_tests COMMAND test_vehicle_bridge)
+add_executable(test_vehicle_state test_vehicle_state.cpp)
+target_link_libraries(test_vehicle_state PRIVATE vehicle_bridge)
+add_test(NAME test_vehicle_state COMMAND test_vehicle_state)
